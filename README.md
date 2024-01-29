@@ -88,8 +88,6 @@ O script `criacao-stack.sh` será utilizado para configurar o ambiente. Este scr
 15. **Mensagem Final**:
    - Exibe uma mensagem indicando o fim da execução do script.
 
-Resumindo, este script prepara e envia arquivos necessários para configurar um ambiente no AWS Lambda e no AWS CloudFormation, automatizando a criação de uma camada Lambda, o upload de um arquivo de função Lambda e a criação de uma stack no CloudFormation. É um exemplo de como scripts shell podem ser usados para automatizar tarefas complexas na AWS.
-
 ### Função `check_command_status`
 
 - Esta função verifica se o último comando executado foi bem-sucedido. É uma maneira de garantir que cada etapa do script seja bem-sucedida antes de prosseguir para a próxima.
@@ -100,7 +98,7 @@ Resumindo, este script prepara e envia arquivos necessários para configurar um 
 - **Reutilização**: Permitem reutilizar valores em várias partes do script, evitando a necessidade de digitar o mesmo valor várias vezes.
 - **Flexibilidade**: Facilitam a modificação do script para diferentes ambientes ou configurações, apenas alterando os valores das variáveis.
 
-Em resumo, essas variáveis são usadas para configurar e automatizar o processo de deploy e configuração de uma aplicação AWS Lambda, incluindo a criação de uma layer, o upload de arquivos para o S3, e a criação de uma stack CloudFormation. Elas garantem que o script seja flexível, reutilizável e fácil de manter.
+Resumindo, este script prepara e envia arquivos necessários para configurar um ambiente no AWS Lambda e no AWS CloudFormation, automatizando a criação de uma camada Lambda, o upload de um arquivo de função Lambda e a criação de uma stack no CloudFormation. É um exemplo de como scripts shell podem ser usados para automatizar tarefas complexas na AWS.
 
 
 #### Deploy com CloudFormation Stackset
