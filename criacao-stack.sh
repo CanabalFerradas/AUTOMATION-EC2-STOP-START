@@ -7,7 +7,8 @@ layer="layer.zip"
 lambda="lambda-stop-start.zip"
 temporario="temp"
 stack="stack-atualizado.yml"
-S3="https://COLOQUE-AQUI-SEU-BUCKET/stack-atualizado.yml"
+S3="https://$bucket/stack-atualizado.yml"
+AccountId="Coloquei sua conta root aqui ou sua conta que vai receber automação"
 
 check_command_status() {
 if [ $? -eq 0 ]; then
@@ -71,7 +72,7 @@ aws cloudformation create-stack \
   --template-url $S3 \
   --parameters \
       ParameterKey=LayerArn,ParameterValue="$arn" \
-      ParameterKey=AccountId,ParameterValue="<seu_account_id>" \
+      ParameterKey=AccountId,ParameterValue="$AccountId" \
   --capabilities CAPABILITY_NAMED_IAM
 
 
