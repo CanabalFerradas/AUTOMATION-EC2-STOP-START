@@ -1,6 +1,6 @@
 ---
 
-# EC2-STOP-START
+# AUTOMATION-EC2-STOP-START
 
 ## Desligamento Automático de Instâncias EC2
 
