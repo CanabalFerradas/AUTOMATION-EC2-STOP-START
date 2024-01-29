@@ -7,8 +7,9 @@ layer="layer.zip"
 lambda="lambda-stop-start.zip"
 temporario="temp"
 stack="stack-atualizado.yml"
-S3="https://$bucket/stack-atualizado.yml"
+S3="https://$bucket.s3.amazonaws.com/$stack"
 AccountId="Coloquei sua conta root aqui ou sua conta que vai receber automação"
+file="Aqui coloque o caminho onde os arquivos lambda, stack, estaram."
 
 check_command_status() {
 if [ $? -eq 0 ]; then
@@ -52,7 +53,7 @@ arn=$(aws lambda publish-layer-version \
 check_command_status
 
 # Cria o arquivo zip da lambda
-cd ~/Documents/ec2-start-stop
+cd $file
 zip -r lambda-stop-start.zip lambda-stop-start.py  
 mv $lambda $tmp
 check_command_status
@@ -63,7 +64,7 @@ check_command_status
 
 
 # Copia o arquivo da stack para s3
-aws s3 cp /Users/rodrigo.ferradas/Documents/ec2-start-stop/$stack s3://$bucket/
+aws s3 cp $file/$stack s3://$bucket/
 check_command_status
 
 # Cria a stack no CloudFormation
